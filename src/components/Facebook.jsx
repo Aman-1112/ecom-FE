@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { verifyToken } from './actions';
 
+const backendurl = require('../../backendurl');
+
 function Facebook(props) {
 
     const history = useHistory();
@@ -13,7 +15,7 @@ function Facebook(props) {
         console.log(response);
         console.log(response.name, response.id, response.picture.data.url, response.email);
         const fbUser = { id: response.id, name: response.name, email: response.email }
-        const res = await axios.post('/api/auth/fbLogin', fbUser)
+        const res = await axios.post(backendurl+'/api/auth/fbLogin', fbUser)
         localStorage.setItem('token', res.data);
         await props.verifyToken(localStorage.getItem('token'))
         history.push('/home')

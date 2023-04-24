@@ -4,6 +4,9 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { verifyToken } from './actions/index';
 import { useHistory } from "react-router-dom";
+
+const backendurl = require('../../backendurl')
+
 function Google(props) {
   const history = useHistory();
   async function onLoginSuccess(res) {
@@ -12,7 +15,7 @@ function Google(props) {
     let decodedData = jwt_decode(res.credential);
     const user = { name: decodedData.given_name, email: decodedData.email }
     console.log(user);
-    let response = await axios.post('/api/auth/googleLogin', user)
+    let response = await axios.post(backendurl+'/api/auth/googleLogin', user)
     localStorage.setItem('token', response.data);
     await props.verifyToken(localStorage.getItem('token'))
     history.push('/home');

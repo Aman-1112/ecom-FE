@@ -7,6 +7,8 @@ import { verifyToken } from './actions/index';
 import Google from './Google';
 // import Facebook from './Facebook';
 
+const backendurl = require('../../backendurl');
+
 function Signup(props) {
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "", confirmPassword: "" })
     const [showPassword, setShowPassword] = useState(false);
@@ -15,7 +17,7 @@ function Signup(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, email, password } = credentials;
-        const response = await fetch("http://localhost:5000/api/auth/createuser", {
+        const response = await fetch(backendurl+"/api/auth/createuser", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
