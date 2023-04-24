@@ -1,0 +1,1 @@
+exports.backendurl='https://ecommerce-api-4y30.onrender.com';

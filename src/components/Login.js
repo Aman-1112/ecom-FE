@@ -5,7 +5,7 @@ import FacebookIcon from '../images/facebook-icon.svg'
 import { connect } from 'react-redux'
 import { verifyToken } from './actions/index';
 import Google from './Google'
-const backendurl = require('../../backendurl');
+const backendurl = require('../backendurl');
 // import Facebook from './Facebook'
 const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })

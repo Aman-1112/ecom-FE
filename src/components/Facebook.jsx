@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { verifyToken } from './actions';
 
-const backendurl = require('../../backendurl');
+const backendurl = require('../backendurl');
 
 function Facebook(props) {
 

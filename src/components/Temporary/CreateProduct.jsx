@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-const backendurl = require('../../../backendurl');
+const backendurl = require('../../backendurl');
 
 function CreateProduct() {
     const [newProduct, setNewProduct] = useState({

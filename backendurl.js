@@ -1,1 +1,0 @@
-exports.const backendurl='https://ecommerce-api-4y30.onrender.com/';

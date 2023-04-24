@@ -7,7 +7,7 @@ import { verifyToken } from './actions/index';
 import Google from './Google';
 // import Facebook from './Facebook';
 
-const backendurl = require('../../backendurl');
+const backendurl = require('../backendurl');
 
 function Signup(props) {
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "", confirmPassword: "" })

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { verifyToken } from './actions/index';
 import { useHistory } from "react-router-dom";
 
-const backendurl = require('../../backendurl')
+const backendurl = require('../backendurl')
 
 function Google(props) {
   const history = useHistory();

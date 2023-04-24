@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const backendurl = require('../../../backendurl');
+const backendurl = require('../../backendurl');
 
 export const fetchAllProducts = (page) => {
     return (
