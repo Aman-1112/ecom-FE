@@ -14,7 +14,7 @@ const Login = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(backendurl+"/api/auth/login", {
+        const response = await fetch(backendurl.backendurl+"/api/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

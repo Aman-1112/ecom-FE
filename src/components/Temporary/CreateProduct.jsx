@@ -10,7 +10,7 @@ function CreateProduct() {
         setNewProduct({ ...newProduct, [e.target.id]: e.target.value });
     }
     function handleSubmit() {
-        axios.post(backendurl+'/api/v1/product/create', newProduct);
+        axios.post(backendurl.backendurl+'/api/v1/product/create', newProduct);
     }
     return (
         <div className='text-center'>

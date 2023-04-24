@@ -15,7 +15,7 @@ function Facebook(props) {
         console.log(response);
         console.log(response.name, response.id, response.picture.data.url, response.email);
         const fbUser = { id: response.id, name: response.name, email: response.email }
-        const res = await axios.post(backendurl+'/api/auth/fbLogin', fbUser)
+        const res = await axios.post(backendurl.backendurl+'/api/auth/fbLogin', fbUser)
         localStorage.setItem('token', res.data);
         await props.verifyToken(localStorage.getItem('token'))
         history.push('/home')

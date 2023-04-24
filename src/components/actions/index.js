@@ -5,7 +5,7 @@ const backendurl = require('../../backendurl');
 export const fetchAllProducts = (page) => {
     return (
         async (dispatch, _getState) => {
-            const res = await axios.get(backendurl+'/api/v1/product/List', {
+            const res = await axios.get(backendurl.backendurl+'/api/v1/product/List', {
                 params: {
                     page: page,
                     limit: 4
@@ -21,7 +21,7 @@ export const fetchAllProducts = (page) => {
 export const fetchSearchedProducts = (searchItem) => {
     return (
         async (dispatch, _getState) => {
-            const res = await axios.get(backendurl+`/api/v1/product/search/${searchItem}`);
+            const res = await axios.get(backendurl.backendurl+`/api/v1/product/search/${searchItem}`);
             // console.log(res.data.productList);
             dispatch({ type: 'FETCH_SEARCHED_PRODUCTS', payload: res.data.productList })
         }
@@ -31,7 +31,7 @@ export const fetchSearchedProducts = (searchItem) => {
 export const fetchProduct = (productId) => {
     return (
         async (dispatch, _getState) => {
-            const res = await axios.get(backendurl+`/api/v1/product/${productId}`);
+            const res = await axios.get(backendurl.backendurl+`/api/v1/product/${productId}`);
             //console.log(res.data.data);
             dispatch({ type: 'FETCH_PRODUCT', payload: res.data.data })
         }
@@ -43,7 +43,7 @@ export const verifyToken = (token) => {//VERIFYING USER AND UPDATING CART OF RED
         async (dispatch, _getState) => {
             let res = null;
             if (token) {
-                res = await axios.get(backendurl+'/api/auth/verify', {
+                res = await axios.get(backendurl.backendurl+'/api/auth/verify', {
                     params: {
                         token: token
                     }
@@ -59,7 +59,7 @@ export const addProductToCart = (item) => { //ADDING TO CART (DB AND REDUX) AND 
     //console.log(item);
     return (
         async (dispatch, getState) => {
-            await axios.post(backendurl+'/api/auth/updateCart', item)
+            await axios.post(backendurl.backendurl+'/api/auth/updateCart', item)
             dispatch({ type: 'UPDATE_CART', payload: item });
         }
     )

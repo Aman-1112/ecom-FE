@@ -15,7 +15,7 @@ function Google(props) {
     let decodedData = jwt_decode(res.credential);
     const user = { name: decodedData.given_name, email: decodedData.email }
     console.log(user);
-    let response = await axios.post(backendurl+'/api/auth/googleLogin', user)
+    let response = await axios.post(backendurl.backendurl+'/api/auth/googleLogin', user)
     localStorage.setItem('token', response.data);
     await props.verifyToken(localStorage.getItem('token'))
     history.push('/home');
