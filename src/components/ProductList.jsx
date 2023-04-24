@@ -137,7 +137,7 @@ function ProductList(props) {
         </>
       }
     </InfiniteScroll>
-      <footer className="bg-dark text-white">Made By Abhishek & Aman &copy;2022</footer>
+      <footer className="bg-dark text-white">Made By Aman &copy;2022</footer>
     </>
   )
 }
